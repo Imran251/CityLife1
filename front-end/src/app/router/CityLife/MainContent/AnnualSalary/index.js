@@ -1,7 +1,9 @@
+// compare annual_salary
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Textbox } from 'react-inputs-validation';
-import { 
+import {
     setAnnualSalary,
     setStep,
 } from '../../../../../actions';
@@ -11,14 +13,14 @@ class AnnualSalary extends React.Component {
 
     constructor(props) {
         super(props)
-        
+
         this.state = {
             validate: false,
         };
         this.nextStep = this.nextStep.bind(this);
         this.prevStep = this.prevStep.bind(this);
     }
-    
+
     prevStep(){
         this.props.setStep(this.props.step - 1)
     }
@@ -33,7 +35,7 @@ class AnnualSalary extends React.Component {
         this.props.setStep(this.props.step + 1)
     }
 
-    
+
 	render () {
 
         console.log('currentCity', this.props.currentCity);
@@ -63,7 +65,7 @@ class AnnualSalary extends React.Component {
                             check: false,
                         }}
                     />
-                    <Textbox tabIndex="2" id="salary" name="salary" type='text' 
+                    <Textbox tabIndex="2" id="salary" name="salary" type='text'
                         validate = {this.state.validate} value={this.props.salary} placeholder="Annual Salary"
                         onChange={(salary, e) => {
                             this.props.setAnnualSalary(Number(salary));
@@ -86,11 +88,11 @@ class AnnualSalary extends React.Component {
                             min: 1,
                             max: 999999999999999,
                             check: true,
-                            required: true, 
+                            required: true,
                         }}
                     />
                 </div>
-                
+
                 <div className="col-lg-9 col-md-10 col-sm-12 mx-auto mt-6">
                     <div className="row">
                         <div className="col-6">
@@ -101,7 +103,7 @@ class AnnualSalary extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 		)
 	}
 }
