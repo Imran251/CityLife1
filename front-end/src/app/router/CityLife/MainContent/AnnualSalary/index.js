@@ -1,4 +1,4 @@
-// compare annual_salary
+// compare annual_salaries
 
 import React from 'react';
 import { connect } from 'react-redux';
