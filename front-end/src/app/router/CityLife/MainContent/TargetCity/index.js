@@ -1,7 +1,9 @@
+// target cities
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Select } from 'react-inputs-validation';
-import { 
+import {
     setTargetCity,
     setStep,
 } from '../../../../../actions';
@@ -11,7 +13,7 @@ class TargetCity extends React.Component {
 
     constructor(props) {
         super(props)
-        
+
         this.state = {
             cities: null,
             validate: false,
@@ -19,7 +21,7 @@ class TargetCity extends React.Component {
         this.nextStep = this.nextStep.bind(this);
         this.prevStep = this.prevStep.bind(this);
     }
-    
+
     componentDidMount(){
         const dataSet = require('../../../../data/cost_of_living_indices.json');
         this.setState({
@@ -38,7 +40,7 @@ class TargetCity extends React.Component {
         this.props.setStep(this.props.step + 1)
     }
 
-    
+
 	render () {
 
         const generateCitiesOptions = () => {
@@ -73,7 +75,7 @@ class TargetCity extends React.Component {
                 </div>
                 <div className="col-lg-5 col-md-6 mx-auto">
                     <Select
-                        tabIndex="1" 
+                        tabIndex="1"
                         id='location'
                         name='location'
                         value={getSelectedTargetCityNo()}
@@ -102,9 +104,9 @@ class TargetCity extends React.Component {
                         }}
                         onBlur={(e) => {}}
                         validationOption={{
-                            name: 'City you want', 
+                            name: 'City you want',
                             check: true,
-                            required: true 
+                            required: true
                         }}
                     />
                 </div>
@@ -118,7 +120,7 @@ class TargetCity extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 		)
 	}
 }
