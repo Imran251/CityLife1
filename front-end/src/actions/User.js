@@ -17,11 +17,11 @@ export const userSignInSuccess = (authUser) => {
     return {
         type: SIGNIN_USER_SUCCESS,
         payload: authUser
-    }
+    };
 };
 
 export const userSignOutSuccess = () => {
     return {
         type: SIGNOUT_USER_SUCCESS,
-    }
+    };
 };
