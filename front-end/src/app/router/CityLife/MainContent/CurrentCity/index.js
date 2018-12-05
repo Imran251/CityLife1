@@ -1,7 +1,8 @@
+//check for current city
 import React from 'react';
 import { connect } from 'react-redux';
 import { Select } from 'react-inputs-validation';
-import { 
+import {
     setCurrentCity,
     setStep,
 } from '../../../../../actions';
@@ -12,7 +13,7 @@ class CurrentCity extends React.Component {
 
     constructor(props) {
         super(props)
-        
+
         this.state = {
             cities: null,
             validate: false,
@@ -20,7 +21,7 @@ class CurrentCity extends React.Component {
         this.nextStep = this.nextStep.bind(this);
         this.prevStep = this.prevStep.bind(this);
     }
-    
+
     componentDidMount(){
         const dataSet = require('../../../../data/cost_of_living_indices.json');
         this.setState({
@@ -42,7 +43,7 @@ class CurrentCity extends React.Component {
         this.props.setStep(this.props.step + 1)
     }
 
-    
+
 	render () {
 
         const generateCitiesOptions = () => {
@@ -77,7 +78,7 @@ class CurrentCity extends React.Component {
                 </div>
                 <div className="col-lg-5 col-md-6 mx-auto">
                     <Select
-                        tabIndex="1" 
+                        tabIndex="1"
                         id='location'
                         name='location'
                         value={getSelectedCurrentCityNo()}
@@ -107,9 +108,9 @@ class CurrentCity extends React.Component {
                         }}
                         onBlur={(e) => {}}
                         validationOption={{
-                            name: 'Current City', 
+                            name: 'Current City',
                             check: true,
-                            required: true 
+                            required: true
                         }}
                     />
                 </div>
@@ -121,7 +122,7 @@ class CurrentCity extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 		)
 	}
 }
