@@ -1,4 +1,4 @@
-//check for current city
+//check for current cities
 import React from 'react';
 import { connect } from 'react-redux';
 import { Select } from 'react-inputs-validation';
